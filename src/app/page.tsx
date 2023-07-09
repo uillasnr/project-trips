@@ -1,7 +1,15 @@
-import  {useSession} from "next-auth/react"
+
+import QuickSearch from "./components/QuickSearch"
+import RecommendedTrips from "./components/RecommendedTrips"
+import TripSearch from "./components/TripSearch"
 
 export default function Home() {
   return (
-    <h1 className="bg-primaryDarker"></h1>
+    <div>
+      <TripSearch />
+      <QuickSearch />
+      <RecommendedTrips />
+    </div>
+
   )
 }
