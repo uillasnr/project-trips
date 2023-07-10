@@ -9,12 +9,12 @@ interface TripHeaderProps {
 }
 
 
-const  TripHeader =({ trip } : TripHeaderProps) => {
+const TripHeader = ({ trip }: TripHeaderProps) => {
 
     return (
         <div className="flex flex-col">
-            <div className="relative h-{300px} w-full">
-                <Image src={trip.coverImage} fill  style={{ ObjectFit: "cover", }}  alt={trip.name} />
+            <div className="relative h-[300px] w-full lg:hidden">
+                <Image src={trip.coverImage} fill style={{ objectFit: "cover", }} alt={trip.name} />
             </div>
 
             {/* TITULO E INFORMAÇÕES */}
@@ -30,7 +30,7 @@ const  TripHeader =({ trip } : TripHeaderProps) => {
                 </p>
             </div>
 
-        
+
         </div>
     );
 };
