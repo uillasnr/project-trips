@@ -1,3 +1,5 @@
+//tela de dethales, com validações dos input data e preço
+
 "use client";
 
 import Button from "@/components/Button";
@@ -156,6 +158,7 @@ const TripReservation = ({ tripId, maxGuests, tripStartDate, tripEndDate, priceP
 
             <div className="flex justify-between mt-3">
                 <p className="font-medium text-sm text-primaryDarker">Total: </p>
+               {/*  Total da viagem */}
                 <p className="font-medium text-sm text-primaryDarker">
                     {startDate && endDate ? `R$${differenceInDays(endDate, startDate) * pricePerDay}` ?? 1 : "R$0"}
                 </p>
