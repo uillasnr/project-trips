@@ -6,7 +6,9 @@ import TripHeader from "./components/TripHeader";
 import TripDescription from "./components/TripDescription";
 import TripHighlights from "./components/TripHighlights";
 import TripLocation from "./components/TripLocation";
-import TripReservation from "./components/TripReserVation";
+import TripReservation from "./components/TripReservation";
+
+
 
 const getTripDetails = async (tripId: string) => {
     const trip = await prisma.trip.findUnique({
@@ -29,12 +31,12 @@ const TripDetails = async ({ params }: { params: { tripId: string } }) => {
             <div className="flex flex-col lg:flex-row lg:mt-12 lg:gap-20">
                 <div className="lg:order-2">
                     <TripReservation
-                        tripId={trip.id}
-                        pricePerDay={trip.pricePerDay as any}
-                        tripStartDate={trip.startDate}
-                        tripEndDate={trip.endDate}
-                        maxGuests={trip.maxGuests}
-                    />
+                     tripId={trip.id}
+                     pricePerDay={trip.pricePerDay as any}
+                     tripStartDate={trip.startDate}
+                     tripEndDate={trip.endDate}
+                     maxGuests={trip.maxGuests}
+                   />
                 </div>
 
                 <div className="lg:order-1">

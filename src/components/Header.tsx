@@ -7,16 +7,18 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
 
 const Header = () => {
-    const [menuIsOpen, setMenuIsOpen] = React.useState(false)
-    const { status, data } = useSession()
+    const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+    const { status, data } = useSession();
 
-    const handleLoginClick = () => signIn()
+    const handleLoginClick = () => signIn();
 
     const handleLogoutClick = () => {
-        setMenuIsOpen(false)
-        signOut()
-    }
-    const handleMenuClick = () => setMenuIsOpen(!menuIsOpen)
+        setMenuIsOpen(false);
+        signOut();
+    };
+
+    const handleMenuClick = () => setMenuIsOpen(!menuIsOpen);
+
 
     return (
         <div className="container mx-auto p-5 py-0 h-[93px] flex justify-between items-center shadow-2xl" >
@@ -37,8 +39,12 @@ const Header = () => {
                     <Image height={35} width={35} src={data.user.image!} alt={data.user.name!} className="rounded-full shadow-md" />
 
                     {menuIsOpen && (
-                        <div className="absolute top-14 left-0 w-full h-full bg-white rounded-md shadow-md flex flex-col justify-center items-center ">
-                            <button className="bg-primary text-xs font-semibold" onClick={handleLogoutClick}>
+                        <div className="absolute top-14 left-0 w-full h-[100px] bg-white rounded-md shadow-md flex flex-col justify-center items-center ">
+                            <Link href="/my-trips" onClick={() => setMenuIsOpen(false)}>
+                                <button className="text-primary pb-2 border-b border-grayLighter border-solid text-sm font-semibold">Minhas Viagens</button>
+                            </Link>
+
+                            <button className="text-primary pt-2 text-sm font-semibold" onClick={handleLogoutClick}>
                                 Logout
                             </button>
                         </div>
