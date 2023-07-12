@@ -52,7 +52,6 @@ const generateSearchQuery = (text: string, startDate?: string | null, budget?: s
       ],
     };
   }
-  console.log({ searchQuery });
 
   return searchQuery;
 };

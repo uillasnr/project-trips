@@ -3,7 +3,7 @@
 import Button from "@/components/Button";
 import CurrencyInput from "@/components/CurrencyInput";
 import DatePicker from "@/components/DatePicker";
-import Input from "@/components/input";
+import Input from "@/components/Input";
 
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -36,7 +36,6 @@ const TripSearch = () => {
       </h1>
 
       <div className="flex flex-col gap-4 mt-5 lg:flex-row lg:max-w-[948px] lg:mx-auto lg:p-4 lg:bg-primary lg:mt-12 lg:bg-opacity-20 lg:rounded-lg">
-
         <Input
           placeholder="Onde você quer ir?"
           error={!!errors.text}
@@ -50,9 +49,12 @@ const TripSearch = () => {
         />
 
         <div className="flex gap-4 lg:w-full">
-          <Controller name="startDate" control={control} render={({ field }) => (
-            <DatePicker onChange={field.onChange} selected={field.value} placeholderText="Data Final" className="w-full" minDate={new Date()} />
-          )}
+          <Controller
+            name="startDate"
+            control={control}
+            render={({ field }) => (
+              <DatePicker onChange={field.onChange} selected={field.value} placeholderText="Data Final" className="w-full" minDate={new Date()} />
+            )}
           />
 
           <Controller
@@ -70,7 +72,7 @@ const TripSearch = () => {
           />
         </div>
 
-        <Button onClick={() => handleSubmit(onSubmit)()} className="w-1/2  w-full lg:h-fit">
+        <Button onClick={() => handleSubmit(onSubmit)()} className="w-1/2 lg:h-fit">
           Buscar
         </Button>
       </div>
