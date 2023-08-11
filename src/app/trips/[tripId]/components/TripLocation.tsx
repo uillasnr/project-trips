@@ -4,10 +4,10 @@ import React from "react";
 
 interface TripLocationProps {
   location: string;
-  /* locationDescription: string; */
+  locationDescription: string;
 }
 
-const TripLocation = ({ location }: TripLocationProps) => {
+const TripLocation = ({ location, locationDescription }: TripLocationProps) => {
   return (
     <div className="p-5 lg:p-0 lg:mt-12 lg:pb-20">
       <h2 className="font-semibold text-primaryDarker mb-5 lg:text-xl">Localização</h2>
@@ -36,7 +36,7 @@ const TripLocation = ({ location }: TripLocationProps) => {
       </div>
 
       <h3 className="text-primaryDarker text-sm font-semibold mt-3 lg:text-base lg:mt-5">{location}</h3>
-  {/*     <p className="text-xs text-primaryDarker mt-2 leading-5 lg:text-sm lg:mt-4">{locationDescription}</p> */}
+      <p className="text-xs text-primaryDarker mt-2 leading-5 lg:text-sm lg:mt-4">{locationDescription}</p>
       <Button variant="outlined" className="w-full mt-5">
         Ver no Google Maps
       </Button>

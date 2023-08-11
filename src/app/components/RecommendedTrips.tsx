@@ -13,7 +13,7 @@ async function getTrips() {
 
 const RecommendedTrips = async () => {
   const data = await getTrips();
-
+  console.log({ data })
   return (
     <div className="container mx-auto p-5">
       <div className="flex items-center">
@@ -22,7 +22,7 @@ const RecommendedTrips = async () => {
         <div className="w-full h-[1px] bg-grayLighter"></div>
       </div>
 
-      <div className="flex flex-col items-center mt-5 gap-5">
+      <div className="flex flex-col items-center mt-5 lg:mt-12 gap-5 lg:flex-row gap lg:flex-wrap lg:justify-center lg:gap-10">
         {data.map((trip: Trip) => (
           <TripItem key={trip.id} trip={trip} />
         ))}
